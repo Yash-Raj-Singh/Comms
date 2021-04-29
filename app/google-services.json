@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "545128316350",
+    "project_id": "comms-e1a56",
+    "storage_bucket": "comms-e1a56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545128316350:android:2bdebca887ee029e4c0def",
+        "android_client_info": {
+          "package_name": "com.example.comms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545128316350-2dvtldh60hg1jk9v299s41s770mu5i7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_jMV84Por6Oo3HYg8qDxMDRy2BG1q4kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545128316350-2dvtldh60hg1jk9v299s41s770mu5i7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
