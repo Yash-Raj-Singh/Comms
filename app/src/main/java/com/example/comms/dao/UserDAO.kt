@@ -1,6 +1,9 @@
 package com.example.comms.dao
 
 import com.example.comms.models.User
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
@@ -17,5 +20,9 @@ class UserDAO {
                 usersCollection.document(user.uid).set(it)
             }
         }
+    }
+
+    fun getUserID(uId: String): Task<DocumentSnapshot>{
+        return usersCollection.document(uId).get()
     }
 }
