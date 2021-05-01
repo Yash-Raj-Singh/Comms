@@ -11,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IPostAdapter {
 
     private lateinit var adapter: PostAdapter
     private lateinit var postDao: PostDAO
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val query = postscollection.orderBy("createdAt", Query.Direction.DESCENDING)
         val recyclerViewOption = FirestoreRecyclerOptions.Builder<postModel>().setQuery(query,postModel::class.java).build()
 
-        adapter = PostAdapter(recyclerViewOption)
+        adapter = PostAdapter(recyclerViewOption, this)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -51,5 +51,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         adapter.stopListening()
+    }
+
+    override fun onLikeClicked(postID: String) {
+        postDao.updateLike(postID)
     }
 }
