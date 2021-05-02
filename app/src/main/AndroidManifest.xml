@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Comms">
-        <activity android:name=".CreatePostActivity"></activity>
+        <activity android:name=".CreatePostActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".SignIn_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
