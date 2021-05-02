@@ -1,6 +1,7 @@
 package com.example.comms
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.i
@@ -9,6 +10,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.comms.dao.PostDAO
 import com.example.comms.models.postModel
@@ -28,6 +30,14 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
         setContentView(R.layout.activity_main)
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
+        val chatting = findViewById<FloatingActionButton>(R.id.chatting)
+
+        chatting.setOnClickListener{
+            val url: String = "https://chat-box-app.netlify.app/"
+            val builder =  CustomTabsIntent.Builder()
+            val customTabsIntent = builder.build()
+            customTabsIntent.launchUrl(this, Uri.parse(url))
+        }
 
         fab.setOnClickListener{
             val intent = Intent(this, CreatePostActivity::class.java)
