@@ -6,12 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".CreatePostActivity">
 
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:text="Create Post"
+        android:fontFamily="@font/nicolas"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/postInput"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:layout_width="0dp"
         android:layout_height="200dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head"
         android:layout_margin="10dp"
         android:padding="12dp"
         android:gravity="top"
